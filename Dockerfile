@@ -15,7 +15,7 @@ RUN mkdir /gcc493 && cd /gcc493 && mkdir gcc493_build && \
     ../gcc-4.9.3/configure --disable-multilib \
                            --enable-languages=c,c++,fortran \
                            --enable-threads=posix && \
-    make -j4 && make install && \
+    make --quiet -j4 && make install && \
     rm -rf /gcc493
 
 # LD library configuration
