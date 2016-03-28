@@ -9,7 +9,8 @@ RUN yum update -y && \
 RUN yum install -y bzip2 libmpc-devel mpfr-devel gmp-devel flex
 
 # Get and build gcc 4.9.3
-RUN mkdir /gcc493 && cd /gcc493 && mkdir gcc493_build && \
+RUN travis_wait 30 \
+    mkdir /gcc493 && cd /gcc493 && mkdir gcc493_build && \
     wget http://mirrors.kernel.org/gnu/gcc/gcc-4.9.3/gcc-4.9.3.tar.gz && \
     tar xzf gcc-4.9.3.tar.gz && cd gcc493_build && \
     ../gcc-4.9.3/configure --disable-multilib \
