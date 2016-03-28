@@ -10,7 +10,7 @@ install:
   - docker build -t sfarrell/cc7-basic .
 
 script:
-  - docker run sfarrell/cc7-basic /bin/bash echo "good"
+  - docker run sfarrell/cc7-basic /bin/bash echo "good container"
 
 after_success:
   - echo "Success"
