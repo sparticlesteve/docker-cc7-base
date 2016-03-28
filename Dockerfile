@@ -10,11 +10,11 @@ RUN yum install -y bzip2 libmpc-devel mpfr-devel gmp-devel flex
 
 # Get and build gcc 4.9.3
 RUN mkdir /gcc493 && cd /gcc493 && mkdir gcc493_build && \
-    svn co svn://gcc.gnu.org/svn/gcc/tags/gcc_4_9_3_release && \
-    cd gcc493_build && \
-    ../gcc_4_9_3_release/configure --disable-multilib \
-                                   --enable-languages=c,c++,fortran \
-                                   --enable-threads=posix && \
+    wget http://mirrors.kernel.org/gnu/gcc/gcc-4.9.3/gcc-4.9.3.tar.gz && \
+    tar xzf gcc-4.9.3.tar.gz && cd gcc493_build && \
+    ../gcc-4.9.3/configure --disable-multilib \
+                           --enable-languages=c,c++,fortran \
+                           --enable-threads=posix && \
     make -j4 && make install && \
     rm -rf /gcc493
 
