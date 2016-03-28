@@ -8,7 +8,7 @@ before_install:
   - echo "Before installing"
 
 install:
-  - travis_wait 50 docker build -t sfarrell/cc7-basic .
+  - travis_wait 90 docker build -t sfarrell/cc7-basic .
 
 script:
   - docker run sfarrell/cc7-basic echo "good container"
