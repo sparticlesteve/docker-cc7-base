@@ -21,4 +21,4 @@ RUN mkdir /gcc493 && cd /gcc493 && mkdir gcc493_build && \
 # LD library configuration
 RUN echo /usr/local/lib64 > /etc/ld.so.conf.d/local.conf && \
     echo /usr/local/lib >> /etc/ld.so.conf.d/local.conf && \
-    ldconfig && ldconfig -p && \
+    ldconfig && ldconfig -p
