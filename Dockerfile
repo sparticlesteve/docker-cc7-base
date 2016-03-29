@@ -3,4 +3,5 @@ MAINTAINER Steve Farrell <Steven.Farrell@cern.ch>
 
 # Basic update and development tools
 RUN yum update -y && \
-    yum install -y gcc gcc-c++ make cmake tar zlib wget subversion git
+    yum install -y gcc gcc-c++ make cmake tar zlib wget subversion git \
+                   krb5-workstation
