@@ -15,3 +15,7 @@ script:
 
 after_success:
   - echo "Success"
+
+deploy:
+  - docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
+  - docker push sfarrell/cc7-basic
